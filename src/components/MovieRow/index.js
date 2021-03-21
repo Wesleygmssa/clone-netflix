@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Item, List, ListArea } from "./styles";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 
 export const MovieRow = ({ title, items, slug }) => {
+  const [scrollx, setScrollX] = useState(0);
   const handleLeftArrow = () => {};
 
   const handleRightArrow = () => {};
@@ -19,7 +20,13 @@ export const MovieRow = ({ title, items, slug }) => {
         <div className="movireRow-right" nClick={handleRightArrow}>
           <NavigateNextIcon style={{ fontSize: 50 }} />
         </div>
-        <List className="moview--list">
+        <List
+          className="moview--list"
+          style={{
+            marginLeft: scrollx,
+            width: items.results.length * 150,
+          }}
+        >
           {items.results.length > 0 &&
             items.results.map((item, key) => (
               <Item key={key}>

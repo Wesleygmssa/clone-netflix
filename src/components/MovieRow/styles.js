@@ -43,7 +43,7 @@ export const ListArea = styled.div`
 `;
 
 export const List = styled.div`
-  width: 99999px;
+  /* width: 99999px; */
   display: flex;
 `;
 
