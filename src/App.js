@@ -1,6 +1,6 @@
 import { GlobalStyle } from "./components/styles/global";
 import React, { useEffect, useState } from "react";
-import { Container, Page, List, Footer } from "./styles";
+import { Container, Page, List, Footer, Loading } from "./styles";
 import { Tmdb } from "./Tmdb";
 import { MovieRow } from "./components/MovieRow";
 import { FeaturedMovie } from "./components/FeaturedMovie";
@@ -75,6 +75,14 @@ export const App = () => {
         </span>
         Wesley Guerra
       </Footer>
+      {movieList.length <= 0 && (
+        <Loading className="loading">
+          <img
+            src="https://media.wired.com/photos/592744d3f3e2356fd800bf00/master/w_2560%2Cc_limit/Netflix_LoadTime.gif"
+            alt="loading"
+          />
+        </Loading>
+      )}
     </>
   );
 };
