@@ -18,7 +18,7 @@ export const MovieRow = ({ title, items, slug }) => {
     let x = scrollx - Math.round(window.innerWidth / 2);
     let listw = items.results.length * 150;
     if (window.innerWidth - listw > x) {
-      x = window.innerWidth - listw - 0;
+      x = window.innerWidth - listw - 60;
     }
     setScrollX(x);
   };
