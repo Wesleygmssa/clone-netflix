@@ -4,6 +4,7 @@ import { Container, Page, List } from "./styles";
 import { Tmdb } from "./Tmdb";
 import { MovieRow } from "./components/MovieRow";
 import { FeaturedMovie } from "./components/FeaturedMovie";
+import { Header } from "./components/Header";
 
 export const App = () => {
   const [movieList, setMovieList] = useState([]);
@@ -17,8 +18,20 @@ export const App = () => {
 
       //filmse destake feature
       let originals = list.filter((item) => item.slug === "originals");
-      let randomCho;
-      console.log(list);
+
+      let randomChosen = Math.floor(
+        Math.random() * (originals[0].items.results.length - 1)
+      );
+      //Aqui o filme aleatorio
+      let chosen = originals[0].items.results[randomChosen];
+      //pegando o filme destaque
+      let chosenInfo = await Tmdb.getMovieInfo(chosen.id, "tv");
+      setFeatureData(chosenInfo);
+
+      // console.log(featureData);
+      // console.log(MoviechosenchosenInfo);
+      // console.log(chosen);
+      // console.log(list);
     };
 
     loadAll();
@@ -28,6 +41,7 @@ export const App = () => {
       <GlobalStyle />
       <Container>
         <Page>
+          <Header />
           {featureData && <FeaturedMovie item={featureData} />}
           <List>
             {movieList.map((item, key) => (
