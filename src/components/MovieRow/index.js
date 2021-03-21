@@ -4,10 +4,24 @@ import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 
 export const MovieRow = ({ title, items, slug }) => {
-  const [scrollx, setScrollX] = useState(0);
-  const handleLeftArrow = () => {};
+  const [scrollx, setScrollX] = useState(-400);
 
-  const handleRightArrow = () => {};
+  const handleLeftArrow = () => {
+    let x = scrollx + Math.round(window.innerWidth / 2);
+    if (x > 0) {
+      x = 0;
+    }
+    setScrollX(x);
+  };
+
+  const handleRightArrow = () => {
+    let x = scrollx - Math.round(window.innerWidth / 2);
+    let listw = items.results.length * 150;
+    if (window.innerWidth - listw > x) {
+      x = window.innerWidth - listw - 60;
+    }
+    setScrollX(x);
+  };
   return (
     <Container key={slug}>
       <h2>{title}</h2>
@@ -17,14 +31,14 @@ export const MovieRow = ({ title, items, slug }) => {
           <NavigateBeforeIcon style={{ fontSize: 50 }} />
         </div>
 
-        <div className="movireRow-right" nClick={handleRightArrow}>
+        <div className="movireRow-right" onClick={handleRightArrow}>
           <NavigateNextIcon style={{ fontSize: 50 }} />
         </div>
         <List
           className="moview--list"
           style={{
             marginLeft: scrollx,
-            width: items.results.length * 150,
+            width: items.results.length * 150, //total * (150 => tamanho da foto)
           }}
         >
           {items.results.length > 0 &&

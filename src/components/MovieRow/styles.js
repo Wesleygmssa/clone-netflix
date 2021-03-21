@@ -45,6 +45,7 @@ export const ListArea = styled.div`
 export const List = styled.div`
   /* width: 99999px; */
   display: flex;
+  transition: all ease 0.5s;
 `;
 
 export const Item = styled.div`
