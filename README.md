@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-   <img src="netflix.png" >
+   <img src="netflix2.png" >
 </p>
 
 ### :computer: How To Run
