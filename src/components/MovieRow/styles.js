@@ -6,11 +6,40 @@ export const Container = styled.div`
   h2 {
     margin-left: 30px;
   }
+
+  .movireRow-left,
+  .movireRow-right {
+    position: absolute;
+    width: 40px;
+    height: 225px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transition: all ease 0.9s;
+  }
+
+  .movireRow-left {
+    left: 0;
+  }
+
+  .movireRow-right {
+    right: 0;
+  }
 `;
 
 export const ListArea = styled.div`
   overflow-x: hidden; // tudo que passar da div será cortado
   padding-left: 30px;
+
+  &:hover .movireRow-left,
+  &:hover .movireRow-right {
+    opacity: 1;
+  }
 `;
 
 export const List = styled.div`

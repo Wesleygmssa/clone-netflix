@@ -1,10 +1,11 @@
 import { GlobalStyle } from "./components/styles/global";
 import React, { useEffect, useState } from "react";
-import { Container, Page, List } from "./styles";
+import { Container, Page, List, Footer } from "./styles";
 import { Tmdb } from "./Tmdb";
 import { MovieRow } from "./components/MovieRow";
 import { FeaturedMovie } from "./components/FeaturedMovie";
 import { Header } from "./components/Header";
+import { FiHeart } from "react-icons/fi";
 
 export const App = () => {
   const [movieList, setMovieList] = useState([]);
@@ -67,6 +68,13 @@ export const App = () => {
           </List>
         </Page>
       </Container>
+      <Footer>
+        Feito com{" "}
+        <span role="img" aria-label="coração">
+          <FiHeart color="red" />
+        </span>
+        Wesley Guerra
+      </Footer>
     </>
   );
 };
