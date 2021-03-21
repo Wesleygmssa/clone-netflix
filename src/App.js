@@ -16,6 +16,8 @@ export const App = () => {
       setMovieList(list);
 
       //filmse destake feature
+      let originals = list.filter((item) => item.slug === "originals");
+      let randomCho;
       console.log(list);
     };
 
