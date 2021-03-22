@@ -27,6 +27,9 @@ yarn
 yarn start
 ```
 
+- Abra [http://localhost:3000](http://localhost:3000) para vizualizar em seu navegador
+- Abra [https://reverent-babbage-cf2c02.netlify.app/](https://reverent-babbage-cf2c02.netlify.app/) para vizualizar em seu navegador
+
 ## 🤔 Tem alguma feature e quer contribuir?
 
 - Faça um fork desse repositório;
